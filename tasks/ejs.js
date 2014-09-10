@@ -33,7 +33,8 @@ module.exports = function(grunt){
       fileitem.src.forEach(function(filepath){
 
           var fileContent = processContent(grunt.file.read(filepath)),
-              compiled;
+              compiled,
+              compileFn;
 
           options.filename = filepath;
 
@@ -43,14 +44,8 @@ module.exports = function(grunt){
             
             fileitem.orig.data = typeof data === 'function' ? data.call(fileitem.orig, fileitem.dest, fileitem.src) : data;
 
-            if (options.filters) {
-              Object.keys(options.filters).forEach(function(filter) {
-                ejs.filters[filter] = options.filters[filter].bind(fileitem.orig);
-              });
-            }
-
-            //compiled = ejs.render(fileContent, options).toString();
-            compiled = ejs.compile(fileContent, options)(fileitem.orig.data);
+            compileFn = ejs.compile(fileContent, options);
+            compiled = options.client ? compileFn : compileFn(fileitem.orig.data);
 
           }catch(e){
             grunt.log.error(e);
