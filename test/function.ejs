@@ -1,0 +1,15 @@
+<% include in/header %>
+
+<div id="bd">
+	<h1>Users <%=year%></h1>
+
+	<% function user(user) { %>
+	  <li><strong><%= user.name %></strong> is a <%= user.age %> year old <%= user.species %>.</li>
+	<% } %>
+
+	<ul>
+	  <% users.map(user) %>
+	</ul>
+</div>
+
+<% include in/footer %>

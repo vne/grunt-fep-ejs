@@ -1,0 +1,9 @@
+<div id="ft">
+    <% if (navs.length) { %>
+      <ul>
+        <% navs.forEach(function(nav){ %>
+          <li href="<%= nav.href %>"><%= nav.name %></li>
+        <% }) %>
+      </ul>
+    <% } %>
+</div>

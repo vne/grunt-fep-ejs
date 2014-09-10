@@ -1,0 +1,51 @@
+{
+  "name": "grunt-fep-ejs",
+  "description": "Compile ejs templates.",
+  "version": "0.0.1",
+  "homepage": "https://github.com/gruntjs/grunt-contrib-jade",
+  "author": {
+    "name": "louxiaojian",
+    "url": "https://github.com/lxj"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lxj/grunt-fep-ejs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lxj/grunt-fep-ejs/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/gruntjs/grunt-contrib-jade/blob/master/LICENSE-MIT"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "ejs": "~1.0.0",
+    "chalk": "~0.5.1"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-nodeunit": "~0.4.1",
+    "grunt-contrib-clean": "~0.6.0",
+    "grunt-contrib-internal": "~0.4.6",
+    "grunt": "~0.4.2"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.1"
+  },
+  "keywords": [
+    "gruntplugin",
+    "ejs"
+  ],
+  "files": [
+    "tasks",
+    "LICENSE-MIT"
+  ]
+}
