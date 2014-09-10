@@ -70,9 +70,6 @@ module.exports = function(grunt) {
   grunt.loadTasks('tasks');
 
   grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-nodeunit');
-  grunt.loadNpmTasks('grunt-contrib-internal');
 
   grunt.registerTask('test', ['clean', 'ejs:compile']);
   grunt.registerTask('test2', ['clean', 'ejs:compile2']);
