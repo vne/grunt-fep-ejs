@@ -1,14 +1,5 @@
 # grunt-fep-ejs
 
-> Compile ejs templates.
-
-
-
-## Getting Started
-This plugin requires Grunt `~0.4.1`
-
-If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
-
 ```shell
 npm install grunt-fep-ejs --save-dev
 ```
@@ -18,7 +9,6 @@ grunt.loadNpmTasks('grunt-fep-ejs');
 ```
 
 ## ejs task
-_Run this task with the `grunt jade` command._
 
 Task targets, files and options may be specified according to the grunt [Configuring tasks](http://gruntjs.com/configuring-tasks) guide.
 ### Options
@@ -26,7 +16,7 @@ Task targets, files and options may be specified according to the grunt [Configu
 #### data
 Type: `Object`
 
-Sets the data passed to Jade during template compilation. Any data can be passed to the template (including grunt templates).
+Sets the data passed to ejs during template compilation. Any data can be passed to the template (including grunt templates).
 
 This value also might be a function taking source and destination path as arguments and returning a data object. Within the function, `this` is bound to the file configuration object.
 
@@ -56,24 +46,19 @@ options: {
 Type: `Boolean`
 Default: **true**
 
-Add Jade debug instructions to generated JS templates.
+Add ejs debug instructions to generated JS templates.
 
 #### client
 Type: `Boolean`
 Default: **false**
 
-Compile to JS template functions for client-side use rather than directly to HTML.
-
-Make sure to also include the Jade runtime (only `runtime.js`) as described in the [Jade documentation](https://github.com/visionmedia/jade#browser-support).
+Compile to JS template functions for client-side use rather than directly to HTML
 
 #### namespace
 Type: `String`, `Boolean`
 Default: **JST**
 
 The namespace in which the precompiled templates will be assigned. Use dot notation (*e.g.* `App.Templates`) for nested namespaces or `false` for no namespace wrapping.
-
-When set to `false` with **amd** option set to `true`, the templates will be returned directly from the AMD wrapper.
-
 
 
 #### parseContent
