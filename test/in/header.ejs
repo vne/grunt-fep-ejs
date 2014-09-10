@@ -1,12 +1,23 @@
-<div id="hd">
-	<h1 id="logo">test</h1>
-	<div class="nav">
-    <% if (navs.length) { %>
-      <ul class="nav-list">
-        <% navs.forEach(function(nav){ %>
-          <li class="nav-item" href="<%= nav.href %>"><%= nav.name %></li>
-        <% }) %>
-      </ul>
-    <% } %>
-    </div>
-</div>
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<link type="text/css" rel="stylesheet" href="assets/css/main.css"/>
+<title>Dao Quick Start</title>
+</head>
+<body>
+
+<div id="page">
+
+  <div id="hd">
+  	<h1 id="logo">test</h1>
+  	<div class="nav">
+      <% if (navs.length) { %>
+        <ul class="nav-list">
+          <% navs.forEach(function(nav){ %>
+            <li class="nav-item" href="<%= nav.href %>"><%= nav.name %></li>
+          <% }) %>
+        </ul>
+      <% } %>
+      </div>
+  </div>
