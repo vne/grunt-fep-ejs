@@ -8,7 +8,7 @@
 module.exports = function(grunt){
   var chalk = require('chalk'),
   parseContent = function(content) {
-    return content; 
+    return content;  
   };
 
   grunt.registerMultiTask('ejs', 'Compile ejs templates.', function(){
