@@ -61,3 +61,16 @@ options: {
 ```
 
 This option accepts a function that lets you perform additional content processing.
+
+#### prefix
+Type: `String`
+Default: ''
+
+Insert arbitrary text before compiled templates. For example, you might wish to create your namespace before putting templates into it. See usage example below.
+
+#### postfix
+Type: `String`
+Default: ''
+
+Insert arbitrary text after compiled templates.
+

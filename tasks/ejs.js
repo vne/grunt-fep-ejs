@@ -25,6 +25,7 @@ module.exports = function(grunt) {
     this.files.forEach(function(fileitem) {
 
       var templates = [];
+      if (options.prefix) { templates.push(options.prefix); }
 
       if (fileitem.src.length < 1) {
         grunt.log.warn('File "' + chalk.red(fileitem.orig.src) + '" not found.');
@@ -56,6 +57,8 @@ module.exports = function(grunt) {
 
         templates.push(compiled);
       });
+
+      if (options.postfix) { templates.push(options.postfix); }
 
       if (templates.length < 1) {
         grunt.log.warn('Destination not written because compiled files were empty.');
