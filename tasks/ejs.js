@@ -5,6 +5,8 @@
 
 'use strict';
 
+var path = require('path');
+
 module.exports = function(grunt) {
   var chalk = require('chalk'),
     parseContent = function(content) {
@@ -36,6 +38,8 @@ module.exports = function(grunt) {
 
         var fileContent = processContent(grunt.file.read(filepath)),
           compiled,
+          nsCompiled,
+          tplName,
           compileFn;
 
         options.filename = filepath;
@@ -48,6 +52,8 @@ module.exports = function(grunt) {
 
           compileFn = ejs.compile(fileContent, options);
           compiled = options.client ? compileFn : compileFn(fileitem.orig.data);
+          tplName = path.basename(options.filename, path.extname(options.filename));
+          nsCompiled = options.namespace + '["' + tplName + '"] = ' + compiled + ';\n';
 
         } catch (e) {
           grunt.log.error(e);
@@ -55,7 +61,7 @@ module.exports = function(grunt) {
           return false;
         }
 
-        templates.push(compiled);
+        templates.push(options.namespace ? nsCompiled: compiled);
       });
 
       if (options.postfix) { templates.push(options.postfix); }
